@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title>Learn to Code</title>
+
+		<link rel="stylesheet" type="text/css" href="../styles.css">
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="../index.html">Home</a></li>
+		</ul>
+
+        <div class="clear"></div>
+        
+        <ul class="breadcrumbs">
+            <li class="page home"><a href="../index.html">Home</a></li>
+            <li class="sep">&#62;</li>
+            <li class="page"><a href="k12-processing.html">K12 Workshop</a></li>
+            <li class="sep">&#62;</li>
+            <li class="page"><a class="this" href="animating.html">Animating</a> </li>
+        </ul>
+        
+		<div class="clear"></div>
+		
+		<h1><a href="summer2016.html">K12 Processing 2-Hour Workshop</a></h1>
+		<h3>Summer 2016</h3>
+		
+        <h2>Animating Your Face</h2>
+        
+        <div class="section">
+            <h4>Activity Description</h4>
+            <p>Now that you have your face programmed, we will animate it with sound. Check out this <a href="https://vimeo.com/22245914">example</a>, to get an idea of what you will be doing.</p>
+        </div>
+        
+        <div class="section">
+            <h4>Topics Covered</h4>
+            <ul>
+                <li>Using the background method to clear the sketch</li>
+                <li>Using the <a href="https://processing.org/reference/libraries/sound/index.html">Processing sound library</a></li>
+                <li>Using variables</li>
+                <li>Using basic mathematical operations with variables</li>
+                <li>[Optional] Using map to map values from one range to another</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h4>Libraries</h4>
+            <p>To Animate our faces we will be using a Sound Library that is built into Processing. A library is a piece of code that was written by someone else, that is precompiled and ready to be used.</p>
+        </div>
+        
+        <div class="section">
+            <h4>Setting up the sound library</h4>
+            <ul>
+                <li>First, add a background call at the top of draw, this will clear the background everytime draw repeats. The code below will reset the background to white, but you can set it to any color you want. <br/><pre>background(255, 255, 255);</pre></li>
+                <li>Add <pre>import processing.sound.*;</pre> to the top of the program. This allows your program to access the sound library.</li>
+                <li>Define three variables at the top, to hold an object that will store the Amplitude of the sound, the audio coming in, and the calculated volume. Add the variables below to the top of your program below the import statement.<br/><pre>Amplitude amp;</pre><br/><pre>AudioIn in;</pre><br/><pre>float volume;</pre></li>
+                <li>At the bottom of the setup method, add the code below.<br/><pre>amp = new Amplitude(this);</pre><br/><pre>in = new AudioIn(this, 0);</pre><br/><pre>in.start();</pre><br/><pre>amp.input(in);</pre></li>
+                <li>At the bottom of the draw method, add a line of code that will update a variable named volume, with the volume of the audio coming in: <pre>volume = amp.analyze()</pre>This volume value will be a value between 0 and 1.</li>
+                <li>To adjust this range use the map method: <pre>volume = map(amp.analyze(), 0, 1, 0, 300);</pre> this example will remap the values from 0 &ndash; 1 to 0 &ndash; 300.</li>
+                <li>Now you can add, subtract, multiply, or divide your volume variable with any of your shapes or lines, to create a face animation that interacts with the sound input.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h4>Code example with the sound library setup</h4>
+            <img src="imgs/animating_code.png" />
+        </div>
+        
+        <div class="section">
+            <a href="moving-eyes.html"><div class="button">
+                <p>All done? Move to the next activity!</p>
+            </div></a>
+        </div>
+	</body>
+</html>

@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>Learn to Code</title>
+
+		<link rel="stylesheet" type="text/css" href="../styles.css">
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="../index.html">Home</a></li>
+		</ul>
+
+        <div class="clear"></div>
+        
+        <ul class="breadcrumbs">
+            <li class="page home"><a href="../index.html">Home</a></li>
+            <li class="sep">&#62;</li>
+            <li class="page"><a href="k12-processing.html">K12 Workshop</a></li>
+            <li class="sep">&#62;</li>
+            <li class="page"><a class="this" href="moving-eyes.html">Moving Eyes</a> </li>
+        </ul>
+        
+		<div class="clear"></div>
+		
+		<h1><a href="summer2016.html">K12 Processing 2-Hour Workshop</a></h1>
+		<h3>Summer 2016</h3>
+		
+        <h2>Moving the eyes left-to-right with the mouse</h2>
+        
+        <div class="section">
+            <h4>Activity Description</h4>
+            <p>This activity is optional, if you have the time give it a try. You will use some new concepts to have the eyes follow the mouse as it moves left-to-right.</p>
+        </div>
+        
+        <div class="section">
+            <h4>Topics Covered</h4>
+            <ul>
+                <li>if statements</li>
+                <li>Using the min and max methods to calculate minimum and maximum values</li>
+                <li>More practice with variables</li>
+            </ul>
+        </div>
+            
+        <div class="section">
+            <h4>New Concepts</h4>
+            <ul>
+                <li><pre>min(a, b);</pre> is a function that returns the minimum of the two values a and b</li>
+                <li><pre>max(a, b);</pre> is a function that returns the maxium of the two values a and b</li>
+                <li>if statements are a construct in most programming languages, and they allow your program to make decisions, if the test is true a certain piece of code will execute</li>
+                <li><pre>mouseX</pre> is a variable built into Processing that stores the x-position of the mouse</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h4>Instructions for moving the eyes with the mouse</h4>
+            <ul>
+                <li>Create a new varaible (above setup) named eye_position and set it to the value of zero. <pre>float eye_position = 0;</pre></li>
+                <li>Add the variable eye_position that you just created to the x position of your shapes that make up your eye(s). If I had <pre>ellipse(50, 50, 100, 200);</pre> as an eye, it would become <pre>ellipse(50+eye_position, 50, 100, 200);</pre></li>
+                <li>Near the top of draw, below your volume statement create an if statement that asks if mouseX is greater than some value (the value will depend on your face, start with 220, and adjust as needed).<br><pre>if(mouseX > 220){
+                
+ }</pre></li>
+                <li>If the if statement is true, we want to move the eye(s) to the right, we will do this by using the min function (again you will need to adjust the numbers until it works for your face). Add the line of code below inside the curly braces of your if statement <pre>eye_position = min(eye_position + 0.5, 10);</pre></li>
+                <li>Create a second if statement right below the first, that tests if mouseX is less than 180. Try this code out on your own, can you figure it out? It is very similar to the first if statements.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h4>Code example for moving the eye to the right</h4>
+            <img src="imgs/moving_eye_code.png" />
+        </div>
+        
+        <div class="section">
+            <a href="https://processing.org/reference/"><div class="button">
+                <p>All done? Find more ideas in the reference!</p>
+            </div></a>
+        </div>
+	</body>
+</html>
